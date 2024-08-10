@@ -55,22 +55,25 @@
   animation: like-shine 0.3s ease-in 0.3s alternate;
 }
 
-.like-icon .main-body,.like-icon .core{
+.like-icon .main-body,
+.like-icon .core {
   transition: fill 0.3s linear 0.03s;
 }
 
-.like-icon:hover .main-body,.like-icon:hover .core {
+.like-icon:hover .main-body,
+.like-icon:hover .core {
   fill: black;
 }
 
-.like-icon:active .main-body,.like-icon:active .core {
+.like-icon:active .main-body,
+.like-icon:active .core {
   fill: var(--color-body-heart);
 }
 
-.like-icon.is-liked:hover .main-body, .like-icon.is-liked:hover .core{
-  fill:var(--color-body-heart);
+.like-icon.is-liked:hover .main-body,
+.like-icon.is-liked:hover .core {
+  fill: var(--color-body-heart);
 }
-
 
 @keyframes theme-menu {
   0% {

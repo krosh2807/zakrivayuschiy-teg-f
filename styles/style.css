@@ -274,6 +274,7 @@
   cursor: pointer;
   min-width: 21px;
   min-height: 21px;
+  max-height: 21px;
   stroke: var(--button-text);
   mix-blend-mode: difference;
   margin-top: -5px;
