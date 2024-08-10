@@ -12,3 +12,93 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+.sparks {
+  fill: var(--color-body-heart);
+  opacity: 0;
+}
+
+.main-body {
+  fill: var(--color-none-body-heart);
+  transition: fill 0.3s linear;
+}
+
+.core {
+  fill: var(--color-none-body-heart);
+  transition: fill 0.3s linear 0.03s;
+}
+
+.contour {
+  fill: var(--main-text-color);
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--color-body-heart);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--color-body-heart);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--color-body-heart);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.is-liked .heart {
+  animation: like-skale 0.3s ease-in 0.1s alternate;
+}
+
+.is-liked .sparks {
+  animation: like-shine 0.3s ease-in 0.3s alternate;
+}
+
+.like-icon .main-body,.like-icon .core{
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon:hover .main-body,.like-icon:hover .core {
+  fill: black;
+}
+
+.like-icon:active .main-body,.like-icon:active .core {
+  fill: var(--color-body-heart);
+}
+
+.like-icon.is-liked:hover .main-body, .like-icon.is-liked:hover .core{
+  fill:var(--color-body-heart);
+}
+
+
+@keyframes theme-menu {
+  0% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes like-skale {
+  0% {
+    transform: scale(1);
+    transform-origin: 50% 50%;
+  }
+
+  100% {
+    transform: scale(1.5);
+    transform-origin: 50% 50%;
+  }
+}
+
+@keyframes like-shine {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
