@@ -22,7 +22,7 @@
   background-image: var(--background-image);
   background-attachment: fixed;
   font-size: 18px;
-  font-family: var(--main-font), sans-serif;
+  font-family: var(--main-font), roboto, sans-serif;
   margin: auto;
   font-variation-settings: "wgth" var(--font-weight-main-text);
 }
@@ -36,7 +36,7 @@
 
 .header {
   margin: 100px auto 100px auto;
-  font-family: var(--variation-font);
+  font-family: var(--variation-font), "RetroVille NC", sans-serif;
   max-width: 700px;
   padding-bottom: 25px;
   background-color: var(--background-color);
@@ -60,8 +60,6 @@
 
 .theme-menu__button {
   cursor: pointer;
-  display: flex;
-  gap: 6px;
   border: none;
   background-color: var(--background-color);
   position: relative;
@@ -74,6 +72,14 @@
 
 .theme-menu__button:disabled:before {
   color: var(--main-text-color);
+}
+
+.theme-menu__button:before {
+  content: "▶";
+  position: absolute;
+  left: -18px;
+  color: transparent;
+  animation: theme-menu 1s infinite ease-in-out;
 }
 
 .theme-menu__button:hover,
@@ -92,11 +98,10 @@
 .theme-menu__button:after {
   content: "";
   display: block;
-  width: 0;
+  width: 0%;
   height: 2px;
   position: absolute;
   bottom: -4px;
-  left: 22px;
   background-color: var(--main-text-color);
   transition: width 0.3s ease-out;
 }
@@ -119,7 +124,7 @@
   padding: 9px 17px;
   justify-content: center;
   align-items: center;
-  font-family: var(--main-font, fantasy);
+  font-family: var(--main-font), roboto, sans-serif;
   border: 2px solid var(--main-text-color);
   background-color: transparent;
   line-height: 90%;
@@ -183,16 +188,6 @@
 .button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 var(--main-text-color);
-}
-
-.theme-menu__button:before {
-  content: "▶";
-  color: transparent;
-  animation: theme-menu 1s infinite ease-in-out;
-}
-
-.theme-menu__button:disabled::before {
-  color: var(--main-text-color);
 }
 
 .header__title {
@@ -259,7 +254,7 @@
 .img__watermark {
   z-index: 10;
   color: var(--main-text-color);
-  font-family: var(--variation-font);
+  font-family: var(--variation-font), "RetroVille NC", sans-serif;
   font-size: 14px;
   opacity: 0.5;
   position: absolute;
@@ -272,7 +267,7 @@
 
 .button__text {
   mix-blend-mode: difference;
-  font-family: var(--variation-font);
+  font-family: var(--variation-font), "RetroVille NC", sans-serif;
   font-size: 14px;
   z-index: 5;
   color: var(--button-text);
@@ -315,7 +310,7 @@
 }
 
 .dialog__box-text {
-  font-family: var(--variation-font);
+  font-family: var(--variation-font), "RetroVille NC", sans-serif;
   font-size: 14px;
   line-height: 21px;
   color: var(--main-text-color);
