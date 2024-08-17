@@ -30,7 +30,7 @@
 
 .contour {
   fill: var(--main-text-color);
-  transform: fill 0.1s linear;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .like-icon.is-liked .main-body {

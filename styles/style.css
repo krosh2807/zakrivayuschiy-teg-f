@@ -24,7 +24,7 @@
   font-size: 18px;
   font-family: var(--main-font), roboto, sans-serif;
   margin: auto;
-  font-variation-settings: "wgth" var(--font-weight-main-text);
+  font-variation-settings: "wght" var(--font-weight-main-text);
 }
 
 @supports (font-variation-settings: normal) {
@@ -276,6 +276,7 @@
 
 @supports (-webkit-text-stroke: 1px var(--background-color)) {
   .img__watermark {
+    text-shadow: none;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--background-color);
   }
@@ -343,7 +344,7 @@
 .dialog__box-body {
   display: flex;
   flex-direction: column;
-  width: 293px;
+  max-width: 293px;
   gap: 30px;
 }
 
