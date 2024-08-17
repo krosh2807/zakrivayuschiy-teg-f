@@ -59,6 +59,7 @@
 }
 
 .theme-menu__button {
+  margin-left: 18px;
   cursor: pointer;
   border: none;
   background-color: var(--background-color);
@@ -191,7 +192,7 @@
 }
 
 .header__title {
-  font-size: 65px;
+  font-size: clamp(3.0625rem, 1.8943rem + 4.9844vw, 4.0625rem);
   font-weight: 400;
   line-height: 65px;
 }
@@ -223,12 +224,13 @@
 }
 
 .card__text {
-  font-variation-settings: "wgth" var(--font-weight-main-text);
+  line-height: 21px;
+  font-variation-settings: "wght" var(--font-weight-main-text);
   font-size: var(--font-size);
 }
 
 .card__title {
-  font-variation-settings: "wgth" var(--font-weight-main-text);
+  font-variation-settings: "wght" var(--font-weight-title);
   font-size: var(--font-size);
   display: flex;
   align-items: center;
@@ -261,8 +263,22 @@
   top: 25px;
   right: 25px;
   mix-blend-mode: hard-light;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--background-color);
+  text-shadow: -0 -1px 0 var(--background-color),
+    0 -1px 0 var(--background-color), -0 1px 0 var(--background-color),
+    0 1px 0 var(--background-color), -1px -0 0 var(--background-color),
+    1px -0 0 var(--background-color), -1px 0 0 var(--background-color),
+    1px 0 0 var(--background-color), -1px -1px 0 var(--background-color),
+    1px -1px 0 var(--background-color), -1px 1px 0 var(--background-color),
+    1px 1px 0 var(--background-color), -1px -1px 0 var(--background-color),
+    1px -1px 0 var(--background-color), -1px 1px 0 var(--background-color),
+    1px 1px 0 var(--background-color);
+}
+
+@supports (-webkit-text-stroke: 1px var(--background-color)) {
+  .img__watermark {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--background-color);
+  }
 }
 
 .button__text {
@@ -291,7 +307,7 @@
   height: 21px;
   margin-right: 10px;
   mix-blend-mode: difference;
-  fill: var(--button-text);
+  color: var(--button-text);
   z-index: 20;
 }
 
@@ -321,7 +337,7 @@
   min-width: 39px;
   height: 39px;
   mix-blend-mode: difference;
-  fill: var(--button-text);
+  color: var(--button-text);
 }
 
 .dialog__box-body {
@@ -383,10 +399,6 @@
     line-height: 14px;
   }
 
-  .card__like-button {
-    margin-left: 10px;
-  }
-
   .footer__button {
     width: 306px;
     height: 80px;
@@ -395,13 +407,22 @@
   }
 
   .dialog__box {
-    padding: 30px 18px;
+    padding: 30px 42px;
+  }
+
+  .dialog__box-body {
+    width: 100%;
+  }
+
+  .dialog__box-wrapper {
+    gap: 10px;
   }
 
   .button__save-img {
     margin-bottom: 8px;
     width: 28px;
     height: 28px;
+    margin-right: 0;
   }
 
   .img__watermark {
